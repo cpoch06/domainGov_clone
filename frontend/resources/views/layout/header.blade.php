@@ -1,4 +1,4 @@
-<nav class="bg-[#054785] text-white h-20" x-data="{ lang: 'en' }" role="navigation" aria-label="Main navigation">
+<nav class="bg-[#054785] text-white h-20" x-data role="navigation" aria-label="Main navigation">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <div class="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4">
         <!-- Logo -->
@@ -17,7 +17,7 @@
                             class="flex items-center hover:text-orange-400 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 rounded-md"
                             :aria-expanded="open"
                             aria-haspopup="true">
-                        <span :class="lang === 'en' ? 'font-inter' : ''" x-text="lang === 'en' ? 'Domain Registration' : 'ចុះឈ្មោះដែនជាតិ'"></span>
+                        <span :class="$store.lang.value === 'en' ? 'font-inter' : ''" x-text="$store.lang.value === 'en' ? 'Domain Registration' : 'ចុះឈ្មោះដែនជាតិ'"></span>
                         <svg :class="{'rotate-180': open}" 
                              class="ml-1 w-3 h-3 md:w-4 md:h-4 transform transition-transform duration-300" 
                              fill="none" 
@@ -38,56 +38,56 @@
                         <a href="/route1" 
                            class="block px-6 py-2 text-[#054785] hover:text-orange-400 font-bold"
                            role="menuitem"
-                           x-text="lang === 'en' ? 'General Information' : 'ព័ត៌មានទូទៅ'"></a>
+                           x-text="$store.lang.value === 'en' ? 'General Information' : 'ព័ត៌មានទូទៅ'"></a>
                         <div class="border-t border-gray-800 my-1"></div>
                         <a href="/route1" 
                            class="block px-6 py-2 text-[#054785] hover:text-orange-400 font-bold"
                            role="menuitem"
-                           x-text="lang === 'en' ? 'Question | Answer' : 'សំណួរ | ចម្លេីយ'"></a>
+                           x-text="$store.lang.value === 'en' ? 'Question | Answer' : 'សំណួរ | ចម្លេីយ'"></a>
                         <div class="border-t border-gray-800 my-1"></div>
                         <a href="/route2" 
                            class="block px-6 py-2 text-blue-800 hover:text-orange-400 font-bold"
                            role="menuitem"
-                           x-text="lang === 'en' ? `Find Ownership's Domain` : 'ស្វែងរកម្ចាស់កម្មសិទ្ធិដែនជាតិ'"></a>
+                           x-text="$store.lang.value === 'en' ? `Find Ownership's Domain` : 'ស្វែងរកម្ចាស់កម្មសិទ្ធិដែនជាតិ'"></a>
                     </div>
                 </li>
                 <li role="none">
                     <a href="#" 
-                       :class="lang === 'en' ? 'font-inter' : ''" 
+                       :class="$store.lang.value === 'en' ? 'font-inter' : ''" 
                        class="hover:underline hover:decoration-4 hover:decoration-orange-400 hover:underline-offset-4"
                        role="menuitem"
-                       x-text="lang === 'en' ? 'How to Register' : 'របៀបចុះឈ្មោះ'"></a>
+                       x-text="$store.lang.value === 'en' ? 'How to Register' : 'របៀបចុះឈ្មោះ'"></a>
                 </li>
                 <li role="none">
                     <a href="#" 
-                       :class="lang === 'en' ? 'font-inter' : ''" 
+                       :class="$store.lang.value === 'en' ? 'font-inter' : ''" 
                        class="hover:underline hover:decoration-4 hover:decoration-orange-400 hover:underline-offset-4"
                        role="menuitem"
-                       x-text="lang === 'en' ? 'Documents' : 'ឯកសារចាំបាច់'"></a>
+                       x-text="$store.lang.value === 'en' ? 'Documents' : 'ឯកសារចាំបាច់'"></a>
                 </li>
                 <li role="none">
                     <a href="#" 
-                       :class="lang === 'en' ? 'font-inter' : ''" 
+                       :class="$store.lang.value === 'en' ? 'font-inter' : ''" 
                        class="hover:underline hover:decoration-4 hover:decoration-orange-400 hover:underline-offset-4"
                        role="menuitem"
-                       x-text="lang === 'en' ? 'About .kh' : 'អំពីឈ្មោះដែន .kh'"></a>
+                       x-text="$store.lang.value === 'en' ? 'About .kh' : 'អំពីឈ្មោះដែន .kh'"></a>
                 </li>
             </ul>
 
             <!-- Sign In Button -->
             <a href="#" class="inline-block">
                 <button type="button" 
-                        :class="lang === 'en' ? 'font-inter' : ''"
+                        :class="$store.lang.value === 'en' ? 'font-inter' : ''"
                         class="bg-white text-[#054785] font-bold px-4 py-1 h-11 rounded-xl hover:bg-orange-400 hover:text-white transition text-sm md:text-md shadow focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
-                        x-text="lang === 'en' ? 'Sign In' : 'ចូលគណនី'"></button>
+                        x-text="$store.lang.value === 'en' ? 'Sign In' : 'ចូលគណនី'"></button>
             </a>
 
             <!-- Language Toggle -->
             <button type="button" 
                     class="btnFlag" 
-                    @click="lang = lang === 'en' ? 'kh' : 'en'"
+                    @click="$store.lang.toggle()"
                     aria-label="Toggle language">
-                <template x-if="lang === 'en'">
+                <template x-if="$store.lang.value === 'en'">
                     <svg xmlns="http://www.w3.org/2000/svg" 
                          id="flag-icons-gb" 
                          viewBox="0 0 640 480"
@@ -106,7 +106,7 @@
                         </path>
                     </svg>
                 </template>
-                <template x-if="lang === 'kh'">
+                <template x-if="$store.lang.value === 'kh'">
                     <svg xmlns="http://www.w3.org/2000/svg" 
                          id="flag-icons-kh" 
                          viewBox="0 0 640 480"
