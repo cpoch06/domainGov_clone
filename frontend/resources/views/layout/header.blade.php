@@ -1,4 +1,4 @@
-<nav class="bg-[#054785] text-white h-20" x-data role="navigation" aria-label="Main navigation">
+<nav class="bg-[#054785] text-white fixed top-0 left-0 right-0 z-50 shadow-lg" x-data role="navigation" aria-label="Main navigation">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <div class="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4">
         <!-- Logo -->
@@ -71,6 +71,13 @@
                        class="hover:underline hover:decoration-4 hover:decoration-orange-400 hover:underline-offset-4"
                        role="menuitem"
                        x-text="$store.lang.value === 'en' ? 'About .kh' : 'អំពីឈ្មោះដែន .kh'"></a>
+                </li>
+                <li role="none">
+                    <a href="#" 
+                       :class="$store.lang.value === 'en' ? 'font-inter' : ''" 
+                       class="hover:underline hover:decoration-4 hover:decoration-orange-400 hover:underline-offset-4"
+                       role="menuitem"
+                       x-text="$store.lang.value === 'en' ? 'Domain Price' : 'តម្លៃដែនជាតិ'"></a>
                 </li>
             </ul>
 
