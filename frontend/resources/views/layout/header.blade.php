@@ -1,16 +1,21 @@
-<nav class="bg-[#054785] text-white fixed top-0 left-0 right-0 z-50 shadow-lg" x-data role="navigation" aria-label="Main navigation">
+<nav class="bg-[#054785] text-white fixed top-0 left-0 right-0 z-50 shadow-lg" x-data="{ mobileMenu: false }" role="navigation" aria-label="Main navigation">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <div class="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-4">
+    <div class="max-w-screen-xl mx-auto flex items-center justify-between py-2 px-2 sm:px-4">
         <!-- Logo -->
         <div class="flex items-center space-x-3 min-w-fit">
             <a href="/" aria-label="Home">
-                <img src="{{ asset('img/logo.webp') }}" class="h-16" alt=".kh Domain Logo" height="64" loading="eager">
+                <img src="{{ asset('img/logo.webp') }}" class="h-12 sm:h-16" alt=".kh Domain Logo" height="64" loading="eager">
             </a>
         </div>
-
+        <!-- Hamburger for mobile -->
+        <button class="md:hidden ml-2 p-2 rounded focus:outline-none focus:ring-2 focus:ring-orange-400" @click="mobileMenu = !mobileMenu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
         <!-- Navigation -->
-        <div class="flex items-center space-x-6">
-            <ul class="flex items-center space-x-6 font-medium text-sm md:text-md" role="menubar">
+        <div :class="{'hidden': !mobileMenu, 'flex': mobileMenu}" class="flex-col md:flex md:flex-row md:items-center md:space-x-6 absolute md:static top-full left-0 w-full md:w-auto bg-[#054785] md:bg-transparent shadow-lg md:shadow-none z-40 md:z-auto transition-all duration-200 md:transition-none hidden md:flex">
+            <ul class="flex flex-col md:flex-row items-start md:items-center space-y-2 md:space-y-0 md:space-x-6 font-medium text-sm md:text-md p-4 md:p-0" role="menubar">
                 <li class="relative" x-data="{ open: false }" role="none">
                     <button type="button" 
                             @click="open = !open" 
@@ -80,21 +85,20 @@
                        x-text="$store.lang.value === 'en' ? 'Domain Price' : 'តម្លៃដែនជាតិ'"></a>
                 </li>
             </ul>
-
             <!-- Sign In Button -->
-            <a href="#" class="inline-block">
+            <a href="#" class="inline-block w-full md:w-auto px-4 md:px-0 mb-2 md:mb-0">
                 <button type="button" 
                         :class="$store.lang.value === 'en' ? 'font-inter' : ''"
-                        class="bg-white text-[#054785] font-bold px-4 py-1 h-11 rounded-xl hover:bg-orange-400 hover:text-white transition text-sm md:text-md shadow focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2"
+                        class="bg-white text-[#054785] font-bold px-4 py-2 h-11 rounded-xl hover:bg-orange-400 hover:text-white transition text-sm md:text-md shadow focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2 w-full md:w-auto"
                         x-text="$store.lang.value === 'en' ? 'Sign In' : 'ចូលគណនី'"></button>
             </a>
-
             <!-- Language Toggle -->
             <button type="button" 
-                    class="btnFlag" 
+                    class="btnFlag mt-2 md:mt-0" 
                     @click="$store.lang.toggle()"
                     aria-label="Toggle language">
-                <template x-if="$store.lang.value === 'en'">
+                <template x-if="$store.lang.value === 'kh'">
+                    <!-- Show UK flag when current language is Khmer -->
                     <svg xmlns="http://www.w3.org/2000/svg" 
                          id="flag-icons-gb" 
                          viewBox="0 0 640 480"
@@ -113,7 +117,8 @@
                         </path>
                     </svg>
                 </template>
-                <template x-if="$store.lang.value === 'kh'">
+                <template x-if="$store.lang.value === 'en'">
+                    <!-- Show Cambodia flag when current language is English -->
                     <svg xmlns="http://www.w3.org/2000/svg" 
                          id="flag-icons-kh" 
                          viewBox="0 0 640 480"
