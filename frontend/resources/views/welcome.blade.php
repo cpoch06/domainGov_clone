@@ -38,84 +38,84 @@
 </div>
 
 <!-- Domain Type Cards Section -->
-<div class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 py-8 sm:py-12 px-2 sm:px-4 md:px-0">
+<div x-data class="max-w-screen-xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-5 md:gap-6 py-6 sm:py-10 md:py-12 px-1 sm:px-4 md:px-0">
     <!-- Card 1 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-users text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Personal Use</span>
-            <span x-show="$store.lang.value === 'kh'">ការប្រើប្រាស់ផ្ទាល់</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-users text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Personal Use</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>ការប្រើប្រាស់ផ្ទាល់</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For individuals, freelancers, and small businesses</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់បុគ្គលឯកជន មុខរបរ និងសហគ្រាសខ្នាតតូច</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For individuals, freelancers, and small businesses</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់បុគ្គលឯកជន មុខរបរ និងសហគ្រាសខ្នាតតូច</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.kh</div>
     </div>
     <!-- Card 2 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-building text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Large Companies</span>
-            <span x-show="$store.lang.value === 'kh'">ក្រុមហ៊ុនធំ</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-building text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Large Companies</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>ក្រុមហ៊ុនធំ</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For large companies, international organizations, and enterprises</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់ក្រុមហ៊ុនធំ ស្ថាប័នអន្តរជាតិ និងអង្គការ</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For large companies, international organizations, and enterprises</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់ក្រុមហ៊ុនធំ ស្ថាប័នអន្តរជាតិ និងអង្គការ</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.com.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.com.kh</div>
     </div>
     <!-- Card 3 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-globe text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Commercial Entities</span>
-            <span x-show="$store.lang.value === 'kh'">អង្គភាពពាណិជ្ជកម្ម</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-globe text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Commercial Entities</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>អង្គភាពពាណិជ្ជកម្ម</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For commercial entities and large enterprises</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់អង្គភាពពាណិជ្ជកម្ម និងសហគ្រាសធំៗ</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For commercial entities and large enterprises</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់អង្គភាពពាណិជ្ជកម្ម និងសហគ្រាសធំៗ</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.net.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.net.kh</div>
     </div>
     <!-- Card 4 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-users-cog text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Organizations</span>
-            <span x-show="$store.lang.value === 'kh'">អង្គការ</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-users-cog text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Organizations</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>អង្គការ</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For NGOs, non-profits, and communities</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់អង្គការ អង្គការមិនរកប្រាក់ចំណេញ និងសហគមន៍</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For NGOs, non-profits, and communities</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់អង្គការ អង្គការមិនរកប្រាក់ចំណេញ និងសហគមន៍</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.org.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.org.kh</div>
     </div>
     <!-- Card 5 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-graduation-cap text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Educational Institutions</span>
-            <span x-show="$store.lang.value === 'kh'">គ្រឹះស្ថានអប់រំ</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-graduation-cap text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Educational Institutions</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>គ្រឹះស្ថានអប់រំ</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For schools, educational institutions, and universities</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់សាលារៀន គ្រឹះស្ថានអប់រំ និងសាកលវិទ្យាល័យ</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For schools, educational institutions, and universities</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់សាលារៀន គ្រឹះស្ថានអប់រំ និងសាកលវិទ្យាល័យ</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.edu.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.edu.kh</div>
     </div>
     <!-- Card 6 -->
-    <div class="bg-white rounded-2xl shadow p-4 sm:p-6 flex flex-col items-center text-center min-h-[220px]">
-        <div class="bg-[#054785] rounded-full p-3 sm:p-4 mb-4"><i class="fas fa-university text-2xl sm:text-3xl text-white"></i></div>
-        <div class="font-bold text-base sm:text-lg mb-2">
-            <span x-show="$store.lang.value === 'en'">Government</span>
-            <span x-show="$store.lang.value === 'kh'">រដ្ឋាភិបាល</span>
+    <div class="bg-white rounded-2xl shadow p-3 sm:p-5 md:p-6 flex flex-col items-center text-center min-h-[180px] sm:min-h-[200px] md:min-h-[220px] w-full">
+        <div class="bg-[#054785] rounded-full p-2 sm:p-3 md:p-4 mb-3 sm:mb-4"><i class="fas fa-university text-xl sm:text-2xl md:text-3xl text-white"></i></div>
+        <div class="font-bold text-sm sm:text-base md:text-lg mb-1 sm:mb-2">
+            <span x-show="$store.lang.value === 'en'" x-cloak>Government</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>រដ្ឋាភិបាល</span>
         </div>
-        <div class="text-gray-600 mb-2 text-sm sm:text-base">
-            <span x-show="$store.lang.value === 'en'">For government institutions and ministries</span>
-            <span x-show="$store.lang.value === 'kh'">សម្រាប់ស្ថាប័នរដ្ឋ រាជរដ្ឋាភិបាល</span>
+        <div class="text-gray-600 mb-1 sm:mb-2 text-xs sm:text-sm md:text-base">
+            <span x-show="$store.lang.value === 'en'" x-cloak>For government institutions and ministries</span>
+            <span x-show="$store.lang.value === 'kh'" x-cloak>សម្រាប់ស្ថាប័នរដ្ឋ រាជរដ្ឋាភិបាល</span>
         </div>
-        <div class="font-bold text-[#054785] text-lg sm:text-xl">.gov.kh</div>
+        <div class="font-bold text-[#054785] text-base sm:text-lg md:text-xl">.gov.kh</div>
     </div>
 </div>
 @endsection
